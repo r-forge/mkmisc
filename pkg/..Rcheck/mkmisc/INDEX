@@ -1,4 +1,0 @@
-mkmisc-package          A package containing miscellaneous data
-                        analyses functions developed by Marcin
-                        Kierczak.
-plot.manhattan.LD       A function to plot LD and MAF on Manhattan plot
