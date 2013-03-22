@@ -1,9 +1,0 @@
-Package: cgmisc
-Type: Package
-Title: Various functions for large scale genomic studies
-Version: 1.0
-Date: 2013-03-20
-Author: Marcin Kierczak
-Maintainer: Marcin Kierczak <marcin.kierczak@slu.se>
-Description: Currently, the package contains several functions useful for enchanted analyses and visualization in large-scale genome-wide association studies (GWAS).  
-License: GPL (>= 2)
