@@ -1,0 +1,9 @@
+Package: cgmisc
+Type: Package
+Title: Various functions useful in computational genetics, e.g. GWAS.
+Version: 1.0
+Date: 2013-03-22
+Author: Marcin Kierczak
+Maintainer: Marcin Kierczak <marcin.kierczak@slu.se>
+Description: Package contains various functions useful in computational genetics, e.g. in genome-wide association studies.
+License: GPL (>=2.10)
