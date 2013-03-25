@@ -1,3 +1,30 @@
+##' Compute Fst fixation index for two populations
+##' 
+##' @description Fixation index Fst is a measure of population differentiation due to genetic structure. 
+##' Given a set of genotypes in two populations, the function computes fixation index 
+##' Fst and corresponding indices: Fit and Fis.
+##' @param data a gwaa.data class object as used by \code{\link[GenABEL]{gwaa.data-class}}
+##' @param pops a vector of two values indicating to which population an individual belongs
+##' @details 
+##' \itemize{
+##'   \item data -- a standard \code{\link[GenABEL]{gwaa.data-class}} object
+##'   \item pops -- a vector of two values indicating to which population an individual belongs. 
+##'   Typically, one uses a vector of zeroes and ones where 0 marks an individual belonging to 
+##'   population 1 and 1 marks an individual belonging to population 2. Often, the vector is a result 
+##'   of clustering in MDS-scaled genomic kinship space
+##' }
+##' @return an \code{\link[cgmisc]{fstats.result}} class object
+##' @references Holsinger, Kent E.; Bruce S. Weir (2009). "Genetics in geographically structured populations: 
+##' defining, estimating and interpreting FST". Nat Rev Genet 10 (9): 639-650. doi:10.1038/nrg2611. ISSN 1471-0056. PMID 19687804.
+##' @author \email{Marcin.Kierczak@@slu.se}
+##' @examples 
+##' \norun{
+##' plot.manhattan.LD()
+##' }
+##' @seealso \code{\link[GenABEL]{gwaa.data-class}}, \code{\link[cgmisc]{fstats.result}}
+##' @keywords FST fixation index population structure heterozygosity
+##' @export
+##' 
 compute.Fstats <- function(data, pops) {
   # Copyright Marcin.Kierczak@slu.se
   # v. 2.0, 17.01.2013
@@ -49,7 +76,6 @@ compute.Fstats <- function(data, pops) {
   FST <- (HT - HS) / HT
   FIT <- (HT - HI) / HT
   glob <- data.frame(p.bar=p.bar, q.bar=q.bar, HI=HI, HS=HS, HT=HT, FIS=FIS, FST=FST, FIT=FIT)
-  setClass("result", representation(pops = "list", glob = "data.frame"))
-  result <- new("result", pops=subpop_data, glob=glob)
+  result <- new("fstats.result", pops=subpop_data, glob=glob)
   result
 }

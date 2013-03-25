@@ -1,5 +1,29 @@
-plot.manhattan.LD <-
-function(data, gwas.result, chr, region, index.snp, p.value=0.05, bonferroni=T, mafThreshold=.05) {
+##' Plot LD pattern and MAF in a Manhattan plot
+##' 
+##' @description Function for plotting local LD pattern (relative to a pre-selected marker) on a 
+##' Manhattan plot resulting from genome-wide association study (GWAS). Each marker on the plot is 
+##' colored according to its LD with the reference marker. Color codes are not continuous, but LD is 
+##' discretized into LD intervals. This is useful for examining signals found in a GWAS study. 
+##' In addition, minor allele frequency will be plotted in the lower panel.
+##' @param data a gwaa.data class object as used by \code{\link[GenABEL]{gwaa.data-class}}
+##' @param gwas.result a scan.gwaa class object as used by \code{\link[GenABEL]{scan.gwaa-class}}
+##' @param chr chromosome nubmer (name) to be displayed
+##' @param region a vector of two coordinates to display
+##' @param index.snp index of the reference SNP
+##' @param p.value p-value threshold to visualize using red dashed line
+##' @param bonferroni logical indicating whether Bonferroni-correction shall be used for the displayed p-value threshold
+##' @param mafThreshold	threshold value for minor allele frequency (MAF) -- displayed as a red line on the lower panel
+##' @return NULL
+##' @author \email{Marcin.Kierczak@@slu.se}
+##' @keywords Manhattan LD linkage disequilibrium genetics
+##' @examples 
+##' \norun{
+##' plot.manhattan.LD()
+##' }
+##' @seealso \code{\link[GenABEL]{gwaa.data-class}}, \code{\link[GenABEL]{scan.gwaa-class}}
+##' @export
+##' 
+plot.manhattan.LD <- function(data, gwas.result, chr, region, index.snp, p.value=0.05, bonferroni=T, mafThreshold=.05) {
   shift <- 2.3
   topMargin <- 0
   # Helper function for retrieving MAF in a region (chromosome)
