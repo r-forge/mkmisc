@@ -13,14 +13,14 @@ compute.Fstats(data, pops)
 
 \arguments{
 	\itemize{
-  	\item data -- a \code{\link[GenABEL]{gwaa.data-class} object,
+  	\item data -- a \code{\link[GenABEL]{gwaa.data-class}} object,
   	\item pops -- a vector of two values indicating to which population an individual belongs.	
 	}
 }
 
 \details{
 	\itemize{
-  	\item data -- a standard \code{\link[GenABEL]{gwaa.data-class} object.
+  	\item data -- a standard \code{\link[GenABEL]{gwaa.data-class}} object.
   	\item pops -- a vector of two values indicating to which population an individual belongs. Typically, one uses a vector of zeroes and ones where 0 marks an individual belonging to population 1 and 1 marks an individual belonging to population 2. Often, the vector is a result of clustering in MDS-scaled genomic kinship space. 	
 	}
 }
