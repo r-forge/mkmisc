@@ -25,8 +25,6 @@ Maintainer: Marcin Kierczak <marcin.kierczak@slu.se>
 \references{
 ~~ Literature or other references for background information ~~
 }
-~~ Optionally other standard keywords, one per line, from file KEYWORDS in the R ~~
-~~ documentation directory ~~
 \keyword{ package }
 \keyword{ computational genetics }
 \keyword{ genetics }
