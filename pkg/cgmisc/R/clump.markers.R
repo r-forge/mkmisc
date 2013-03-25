@@ -11,10 +11,11 @@
 ##' @param data data object in \code{\link[GenABEL]{gwaa.data-class}}
 ##' @param image a logical indicating whether to plot clumping results or not
 ##' @return a \code{list} of clumps
-##' @author \email{Marcin.Kierczak@@slu.se}
+##' @author Marcin Kierczak <\email{Marcin.Kierczak@@slu.se}>
 ##' @examples 
-##' clumps <- clumpMarkers(data.qc0, image=T, an <- an0, chr <- 6, 
-##' bp.dist <- 250e3, p1 <- 0.0001, p2 <- 0.01, r2 <- 0.5)
+##' \norun{
+##' clumps <- clump.markers(data.qc0, image=T, an <- an0, chr <- 6, 
+##' bp.dist <- 250e3, p1 <- 0.0001, p2 <- 0.01, r2 <- 0.5)}
 ##' @references \url{http://pngu.mgh.harvard.edu/~purcell/plink/clump.shtml}
 ##' @export
 

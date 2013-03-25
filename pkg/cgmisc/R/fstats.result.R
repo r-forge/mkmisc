@@ -15,5 +15,5 @@
 #' @rdname fstats.result
 #'@aliases fstats.result-class 
 #' @exportClass fstats.result
-#' @author \email{Marcin.Kierczak@@slu.se}
+#' @author Marcin Kierczak <\email{Marcin.Kierczak@@slu.se}>
 setClass("fstats.result", representation(pops = "list", glob = "data.frame"))

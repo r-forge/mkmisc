@@ -5,6 +5,7 @@
 ##' Fst and corresponding indices: Fit and Fis.
 ##' @param data a gwaa.data class object as used by \code{\link[GenABEL]{gwaa.data-class}}
 ##' @param pops a vector of two values indicating to which population an individual belongs
+##' 
 ##' @details 
 ##' \itemize{
 ##'   \item data -- a standard \code{\link[GenABEL]{gwaa.data-class}} object
@@ -16,7 +17,7 @@
 ##' @return an \code{\link[cgmisc]{fstats.result}} class object
 ##' @references Holsinger, Kent E.; Bruce S. Weir (2009). "Genetics in geographically structured populations: 
 ##' defining, estimating and interpreting FST". Nat Rev Genet 10 (9): 639-650. doi:10.1038/nrg2611. ISSN 1471-0056. PMID 19687804.
-##' @author \email{Marcin.Kierczak@@slu.se}
+##' @author Marcin Kierczak <\email{Marcin.Kierczak@@slu.se}>
 ##' @examples 
 ##' \norun{
 ##' plot.manhattan.LD()

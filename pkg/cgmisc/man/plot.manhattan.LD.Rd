@@ -50,7 +50,7 @@ plot.manhattan.LD()
 }
 }
 \author{
-  \email{Marcin.Kierczak@slu.se}
+  Marcin Kierczak <\email{Marcin.Kierczak@slu.se}>
 }
 \seealso{
   \code{\link[GenABEL]{gwaa.data-class}},

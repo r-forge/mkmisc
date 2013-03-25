@@ -34,11 +34,12 @@
   \code{\link[GenABEL]{gwaa.data-class}} object.
 }
 \examples{
-clumps <- clumpMarkers(data.qc0, image=T, an <- an0, chr <- 6,
-bp.dist <- 250e3, p1 <- 0.0001, p2 <- 0.01, r2 <- 0.5)
+\\norun{
+clumps <- clump.markers(data.qc0, image=T, an <- an0, chr <- 6,
+bp.dist <- 250e3, p1 <- 0.0001, p2 <- 0.01, r2 <- 0.5)}
 }
 \author{
-  \email{Marcin.Kierczak@slu.se}
+  Marcin Kierczak <\email{Marcin.Kierczak@slu.se}>
 }
 \references{
   \url{http://pngu.mgh.harvard.edu/~purcell/plink/clump.shtml}

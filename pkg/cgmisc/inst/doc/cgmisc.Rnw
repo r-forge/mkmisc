@@ -1,0 +1,37 @@
+\documentclass{article}
+
+\begin{document}
+
+\section{Introduction}
+\subsection{Synopsis}
+Package {\tt cgmisc} contains miscellaneous functions, hopefully useful for extending genome-wide association study (GWAS) analyses. 
+
+\subsection{Getting help}
+Like every other R function, the functions provided in this package are documented in the standard R-help (Rd) format and can be easily accessed by issuing {\tt help()} or its shorter version, {\tt ?} function. For instance, if you want to get more information on how to use the {\tt clump.markers()} function, type either {\tt help(clumpmarkers)} or {\tt ?clump.markers} and press return/enter. To see this document from within R you type {\tt vignette('cgmisc')}. 
+
+\subsection{Purpose of this document}
+This document aims at presenting how to use functions provided in this package in a typical GWAS data analyses workflow. It is, however, not pretending to be a GWAS tutorial as such.
+
+\subsection{Conventions}
+\begin{itemize}
+  \item{All R commands are written in terminal type: {\tt myfun(foo=T, bar=54)}}
+  \item{In the above example: {\tt myfun} is a \textit{function} and both {\tt foo} and {\tt bar} are its \textit{arguments}}
+\end{itemize}
+
+\section{Working with {\tt cgmisc}}
+\subsection{Installation}
+In order to install {\tt cgmisc}, you either use one of the R GUIs (native R GUI, RStudio etc.) or type the following command:
+<<installation, tidy=TRUE, eval=FALSE>>=
+install.packages("cgmisc", repos="")
+@
+\noindent Functions in the {\tt cgmisc} package often complement or use {\tt GenABEL} \ref{aulchenko} package functions and data structures. {\tt GenABEL} is an excellent and widely-used R package for performing genome-wide association studies and much more... Therefore {\tt GenABEL} will be loaded automagically. If for some mysterious reason this does not happen, you can install and load {\tt GenABEL} by typing:
+<<genabel, tidy=TRUE,eval=F>>=
+install.packages('GenABEL')
+require('GenABEL')
+@
+\noindent You load {\tt cgmisc} package in exactly the same way (both {\tt require} and {\tt library} will do):
+<<loading, tidy=TRUE,eval=F>>=
+require('cgmisc')
+library('cgmisc') # Alternative to require
+@
+\end{document}

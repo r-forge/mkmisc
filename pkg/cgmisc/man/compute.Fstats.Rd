@@ -37,7 +37,7 @@ plot.manhattan.LD()
 }
 }
 \author{
-  \email{Marcin.Kierczak@slu.se}
+  Marcin Kierczak <\email{Marcin.Kierczak@slu.se}>
 }
 \references{
   Holsinger, Kent E.; Bruce S. Weir (2009). "Genetics in

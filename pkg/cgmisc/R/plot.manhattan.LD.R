@@ -14,7 +14,7 @@
 ##' @param bonferroni logical indicating whether Bonferroni-correction shall be used for the displayed p-value threshold
 ##' @param mafThreshold	threshold value for minor allele frequency (MAF) -- displayed as a red line on the lower panel
 ##' @return NULL
-##' @author \email{Marcin.Kierczak@@slu.se}
+##' @author Marcin Kierczak <\email{Marcin.Kierczak@@slu.se}>
 ##' @keywords Manhattan LD linkage disequilibrium genetics
 ##' @examples 
 ##' \norun{

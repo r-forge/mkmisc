@@ -16,6 +16,6 @@
   \code{data.frame} of global statistics} }
 }
 \author{
-  \email{Marcin.Kierczak@slu.se}
+  Marcin Kierczak <\email{Marcin.Kierczak@slu.se}>
 }
 
