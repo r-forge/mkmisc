@@ -6,27 +6,27 @@
     p1 = 1e-04, p2 = 0.01, r2 = 0.5, image = F)
 }
 \arguments{
-  \item{p1}{threshold for index markers}
+  \item{p1}{threshold for index markers,}
 
-  \item{p2}{threshold for clumping}
+  \item{p2}{threshold for clumping,}
 
-  \item{r2}{threshold for LD}
+  \item{r2}{threshold for LD,}
 
-  \item{bp.dist}{threshold for inter-marker distance}
+  \item{bp.dist}{threshold for inter-marker distance,}
 
-  \item{chr}{chromosome to be clumped}
+  \item{chr}{chromosome to be clumped,}
 
-  \item{an}{a \code{\link[GenABEL]{gwaa.scan-class}} object
-  with association test results}
+  \item{an}{\code{\link[GenABEL]{gwaa.scan-class}}
+  objectwith association test results,}
 
   \item{data}{data object in
-  \code{\link[GenABEL]{gwaa.data-class}}}
+  \code{\link[GenABEL]{gwaa.data-class}},}
 
   \item{image}{a logical indicating whether to plot
-  clumping results or not}
+  clumping results or not.}
 }
 \value{
-  a \code{list} of clumps
+  a list of clumps
 }
 \description{
   \code{clumpMarkers} implements clumping procedure
@@ -34,9 +34,9 @@
   \code{\link[GenABEL]{gwaa.data-class}} object.
 }
 \examples{
-\\norun{
-clumps <- clump.markers(data.qc0, image=T, an <- an0, chr <- 6,
-bp.dist <- 250e3, p1 <- 0.0001, p2 <- 0.01, r2 <- 0.5)}
+\dontrun{
+   clumps <- clumpMarkers(data.qc0, image=T, an <- an0, chr <- 6, bp.dist <- 250e3, p1 <- 0.0001, p2 <- 0.01, r2 <- 0.5)
+   }
 }
 \author{
   Marcin Kierczak <\email{Marcin.Kierczak@slu.se}>

@@ -3,8 +3,17 @@ Package: cgmisc
 Version: 2.0
 Date: 2013-03-25
 Title: Various functions useful in computational genetics, e.g. GWAS.
-Author: Marcin Kierczak <marcin.kierczak@slu.se>B
+Author: Marcin Kierczak <marcin.kierczak@slu.se>
 Maintainer: Marcin Kierczak <marcin.kierczak@slu.se>
-Depends: R (>= 2.15.3), GenABEL
-Description: Package contains various functions useful in computational genetics, e.g. in genome-wide association studies.
+Depends:
+    R (>= 2.15.3),
+    GenABEL (>= 1.7.4)
+Description: Package contains various functions useful in computational
+    genetics, e.g. in genome-wide association studies.
 License: GPL (>=2.10)
+Collate:
+    'clump.markers.R'
+    'compute.Fstats.R'
+    'fstats.result.R'
+    'plot.clumps.R'
+    'plot.manhattan.LD.R'

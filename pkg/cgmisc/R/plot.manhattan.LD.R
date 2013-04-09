@@ -17,7 +17,7 @@
 ##' @author Marcin Kierczak <\email{Marcin.Kierczak@@slu.se}>
 ##' @keywords Manhattan LD linkage disequilibrium genetics
 ##' @examples 
-##' \norun{
+##' \dontrun{
 ##' plot.manhattan.LD()
 ##' }
 ##' @seealso \code{\link[GenABEL]{gwaa.data-class}}, \code{\link[GenABEL]{scan.gwaa-class}}

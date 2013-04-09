@@ -32,7 +32,7 @@
   in MDS-scaled genomic kinship space }
 }
 \examples{
-\\norun{
+\dontrun{
 plot.manhattan.LD()
 }
 }

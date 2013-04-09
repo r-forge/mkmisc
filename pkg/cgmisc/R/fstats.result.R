@@ -5,7 +5,7 @@
 #' This line and the next ones go into the details.
 #' This line thus appears in the details as well.
 #'
-#'@section Slots: 
+#' @section Slots: 
 #'  \describe{
 #'    \item{\code{pops}:}{A \code{list} of per-population statistics}
 #'    \item{\code{glob}:}{A \code{data.frame} of global statistics}
@@ -13,7 +13,7 @@
 #'
 #' @name fstats.result
 #' @rdname fstats.result
-#'@aliases fstats.result-class 
+#' @aliases fstats.result-class 
 #' @exportClass fstats.result
 #' @author Marcin Kierczak <\email{Marcin.Kierczak@@slu.se}>
 setClass("fstats.result", representation(pops = "list", glob = "data.frame"))

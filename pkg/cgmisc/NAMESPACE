@@ -1,1 +1,4 @@
-exportPattern("^[[:alpha:]]+")
+export(compute.Fstats)
+export(plot.clumps)
+export(plot.manhattan.LD)
+exportClasses(fstats.result)

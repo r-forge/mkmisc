@@ -19,7 +19,7 @@
 ##' defining, estimating and interpreting FST". Nat Rev Genet 10 (9): 639-650. doi:10.1038/nrg2611. ISSN 1471-0056. PMID 19687804.
 ##' @author Marcin Kierczak <\email{Marcin.Kierczak@@slu.se}>
 ##' @examples 
-##' \norun{
+##' \dontrun{
 ##' plot.manhattan.LD()
 ##' }
 ##' @seealso \code{\link[GenABEL]{gwaa.data-class}}, \code{\link[cgmisc]{fstats.result}}

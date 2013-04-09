@@ -1,25 +1,27 @@
 ##' Clump markers according to their LD
 ##' 
-##' @description \code{clumpMarkers} implements clumping procedure described in PLINK documentation on
+##' \code{clumpMarkers} implements clumping procedure described in PLINK documentation on
 ##' a \code{\link[GenABEL]{gwaa.data-class}} object.  
-##' @param p1 threshold for index markers
-##' @param p2 threshold for clumping
-##' @param r2 threshold for LD
-##' @param bp.dist threshold for inter-marker distance
-##' @param chr chromosome to be clumped
-##' @param an a \code{\link[GenABEL]{gwaa.scan-class}} object with association test results
-##' @param data data object in \code{\link[GenABEL]{gwaa.data-class}}
-##' @param image a logical indicating whether to plot clumping results or not
-##' @return a \code{list} of clumps
-##' @author Marcin Kierczak <\email{Marcin.Kierczak@@slu.se}>
-##' @examples 
-##' data(cgmiscdat)
-##' clumps <- clump.markers(data.qc0, image=T, an <- an0, chr <- 6, 
-##' bp.dist <- 250e3, p1 <- 0.0001, p2 <- 0.01, r2 <- 0.5)
+##' 
+##' @param p1 threshold for index markers,
+##' @param p2 threshold for clumping,
+##' @param r2 threshold for LD,
+##' @param bp.dist threshold for inter-marker distance,
+##' @param chr chromosome to be clumped,
+##' @param an \code{\link[GenABEL]{gwaa.scan-class}} objectwith association test results,
+##' @param data data object in \code{\link[GenABEL]{gwaa.data-class}},
+##' @param image a logical indicating whether to plot clumping results or not.
+##' 
+##' @return a list of clumps
+##' 
 ##' @references \url{http://pngu.mgh.harvard.edu/~purcell/plink/clump.shtml}
-##' @export
-
-
+##' 
+##' @examples \dontrun{
+##'    clumps <- clumpMarkers(data.qc0, image=T, an <- an0, chr <- 6, bp.dist <- 250e3, p1 <- 0.0001, p2 <- 0.01, r2 <- 0.5)
+##'    } 
+##'    
+##' @author Marcin Kierczak <\email{Marcin.Kierczak@@slu.se}>
+##'    
 clump.markers <- function(data, an, chr=1, bp.dist=250e3, p1=0.0001, p2=0.01, r2=0.5, image=F) {
   data.chr <- data[,data@gtdata@chromosome == chr]
   result <- an[an@annotation$Chromosome == chr,]

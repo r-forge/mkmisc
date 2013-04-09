@@ -45,7 +45,7 @@
   panel.
 }
 \examples{
-\\norun{
+\dontrun{
 plot.manhattan.LD()
 }
 }
