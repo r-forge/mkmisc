@@ -84,7 +84,7 @@ In order to install {\tt cgmisc}, you either use one of the R GUIs (native R GUI
 \end{kframe}
 \end{knitrout}
 
-\noindent Functions in the {\tt cgmisc} package often complement or use {\tt GenABEL} \ref{aulchenko} package functions and data structures. {\tt GenABEL} is an excellent and widely-used R package for performing genome-wide association studies and much more... Therefore {\tt GenABEL} will be loaded automagically. If for some mysterious reason this does not happen, you can install and load {\tt GenABEL} by typing:
+\noindent Functions in the {\tt cgmisc} package often complement or use {\tt GenABEL} \ref{aulchenko} package functions and data structures. {\tt GenABEL} is an excellent and widely-used R package for performing genome-wide association studies and much more... Therefore {\tt GenABEL} will be loaded automagically when loading {\tt cgmisc}. If for some mysterious reason this does not happen, you can install and load {\tt GenABEL} by typing:
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
@@ -102,6 +102,17 @@ In order to install {\tt cgmisc}, you either use one of the R GUIs (native R GUI
 \hlfunctioncall{library}(\hlstring{"cgmisc"})  # Alternative to require
 \end{alltt}
 \end{kframe}
+\end{knitrout}
+
+\noindent After having loaded the package it is time to load some data:
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlfunctioncall{data}(cgmiscdat1)
+\end{alltt}
+
+
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: data set 'cgmiscdat1' not found}}\end{kframe}
 \end{knitrout}
 
 \end{document}
