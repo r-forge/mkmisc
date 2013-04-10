@@ -54,9 +54,13 @@
 \newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
 
 \usepackage{alltt}
+%\lstset{breaklines=true} % break long lines
+\usepackage[utf8]{inputenc} 
 
 \begin{document}
 
+
+%render_listings()
 \section{Introduction}
 \subsection{Synopsis}
 Package {\tt cgmisc} contains miscellaneous functions, hopefully useful for extending genome-wide association study (GWAS) analyses. 
@@ -94,6 +98,17 @@ In order to install {\tt cgmisc}, you either use one of the R GUIs (native R GUI
 \end{kframe}
 \end{knitrout}
 
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Loading required package: GenABEL}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Loading required package: MASS}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# GenABEL v. 1.7-4 (February 22, 2013) loaded}}\end{kframe}
+\end{knitrout}
+
 \noindent You load {\tt cgmisc} package in exactly the same way (both {\tt require} and {\tt library} will do):
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
@@ -102,13 +117,7 @@ In order to install {\tt cgmisc}, you either use one of the R GUIs (native R GUI
 \end{alltt}
 
 
-{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Loading required package: cgmisc}}
-
-{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Loading required package: GenABEL}}
-
-{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Loading required package: MASS}}
-
-{\ttfamily\noindent\itshape\color{messagecolor}{\#\# GenABEL v. 1.7-4 (February 22, 2013) loaded}}\begin{alltt}
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Loading required package: cgmisc}}\begin{alltt}
 \hlfunctioncall{library}(\hlstring{"cgmisc"})  # Alternative to require
 \end{alltt}
 \end{kframe}
@@ -139,7 +148,12 @@ an <- \hlfunctioncall{qtscore}(cad ~ sex, data = cgmiscdat1)
 \hlfunctioncall{plot}(an, pch = 19, cex = 0.5)  \hlcomment{# Plot standard Manhattan}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/plot_Manhattan_LD} 
+
+{\centering \includegraphics[width=1.0\textwidth]{figure/plot_Manhattan_LD} 
+
+}
+
+
 
 \end{knitrout}
 
@@ -149,6 +163,12 @@ Once this is done, you might be interested in checking the top associated marker
 \begin{alltt}
 \hlfunctioncall{summary}(an, top = 5)  \hlcomment{# List top 5 markers}
 \end{alltt}
+\end{kframe}
+\end{knitrout}
+
+{\small
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{verbatim}
 ## Summary for top 5 results, sorted by P1df
 ##                 Chromosome Position Strand A1 A2   N    effB se_effB
@@ -173,16 +193,34 @@ Once this is done, you might be interested in checking the top associated marker
 \end{kframe}
 \end{knitrout}
 
-We can see that {\tt  ΒΙCF2P453669} on chromosome 6 (23.34Mb) is the strongest association. Now time to visualize a short fragment of chromosome 6, 1Mb downstream and 1Mb upstream of the top-associated marker.
+}
+We can see that {\tt BICF2P453669} on chromosome 6 (23.34Mb) is the strongest association. Now time to visualize a short fragment of chromosome 6, boyh 1.0Mb downstream and 1.0Mb upstream of the top-associated marker.
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlfunctioncall{plot.manhattan.LD}(data = cgmiscdat1, gwas.result = an, chr = 6, region = \hlfunctioncall{c}(22340000, 
-    24340000), index.snp = \hlstring{"BICF2P453669"}, p.value = 0.05, bonferroni = F, mafThreshold = 0.1)
+\hlfunctioncall{plot.manhattan.LD}(data=cgmiscdat1, gwas.result=an, chr=6, 
+                  region=\hlfunctioncall{c}(22340000, 24340000), 
+                  index.snp=\hlstring{"BICF2P453669"}, 
+                  p.value=0.05, bonferroni=F, 
+                  mafThreshold=.1)
 \end{alltt}
-\end{kframe}
-\includegraphics[width=\maxwidth]{figure/plot_Manhattan_LD_3} 
+\end{kframe}\begin{figure}[]
+
+
+{\centering \includegraphics[width=1.0\textwidth]{figure/plot_Manhattan_LD_3} 
+
+}
+
+\caption[Here the black, empty circles denote monomorphic markers -- we did not perform any quality control before]{Here the black, empty circles denote monomorphic markers -- we did not perform any quality control before.\label{fig:plot.Manhattan.LD.3}}
+\end{figure}
+
 
 \end{knitrout}
+
+\section{Using {\tt clump.markers} function}
+The {\tt clump.markers} functions implements clumping algorithm as described in PLINK documentation \ref{plink}. In short, the clumping algorithm consists of the following steps:
+\begin{itemize}
+\item{First step}
+\end{itemize}
 
 \end{document}

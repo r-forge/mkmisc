@@ -1,7 +1,21 @@
 \documentclass{article}
+%\lstset{breaklines=true} % break long lines
+\usepackage[utf8]{inputenc} 
 
 \begin{document}
-
+<<setup, include=FALSE>>=
+opts_chunk$set(   
+   fig.width=9,
+   fih.height=5,
+   out.width="1.0\\textwidth",
+   fig.keep="high",
+   fig.show="hold",
+   fig.align="center",
+   dev='CairoPNG',
+   highlight=TRUE,
+   tidy=TRUE)
+@
+%render_listings()
 \section{Introduction}
 \subsection{Synopsis}
 Package {\tt cgmisc} contains miscellaneous functions, hopefully useful for extending genome-wide association study (GWAS) analyses. 
@@ -25,8 +39,11 @@ In order to install {\tt cgmisc}, you either use one of the R GUIs (native R GUI
 install.packages("cgmisc", repos="")
 @
 \noindent Functions in the {\tt cgmisc} package often complement or use {\tt GenABEL} \ref{aulchenko} package functions and data structures. {\tt GenABEL} is an excellent and widely-used R package for performing genome-wide association studies and much more... Therefore {\tt GenABEL} will be loaded automagically when loading {\tt cgmisc}. If for some mysterious reason this does not happen, you can install and load {\tt GenABEL} by typing:
-<<genabel, tidy=TRUE,eval=F>>=
+<<genabel, tidy=TRUE,eval=FALSE>>=
 install.packages('GenABEL')
+require('GenABEL')
+@
+<<genabel2, echo=FALSE, eval=TRUE>>=
 require('GenABEL')
 @
 \noindent You load {\tt cgmisc} package in exactly the same way (both {\tt require} and {\tt library} will do):
@@ -35,22 +52,37 @@ require('cgmisc')
 library('cgmisc') # Alternative to require
 @
 \noindent After having loaded the package it is time to load some data:
-<<loading.data, tidy=TRUE, eval=TRUE>>=
+<<loading.data, tidy=TRUE, eval=TRUE, cache=FALSE>>=
 data(cgmiscdat1)
 @
 \section{Using {\tt plot.Manhattan.LD} function}
 The {\tt plot.Manhattan.LD} function allows you to visualize the LD pattern in a genome fragment on an enchanced Manhattan plot. You select one marker, typically the one with the strongest association to the analysed trait and all other markers in the region are coloured according to the degree of linkage disequilibrium with this index marker. You need to begin by running a standard GWAS analyses:
-<<plot.Manhattan.LD, tidy=TRUE, eval=TRUE, fig.show=TRUE, fig.ext='png', cache=TRUE>>=
+<<plot.Manhattan.LD, tidy=TRUE, eval=TRUE, fig.show=TRUE, cache=FALSE>>=
 # Run association analyses
 an <- qtscore(cad~sex, data=cgmiscdat1) 
 plot(an, pch=19, cex=.5) # Plot standard Manhattan 
 @
 Once this is done, you might be interested in checking the top associated marker. This can be done using the following call:
-<<plot.Manhattan.LD.2, tidy=TRUE, eval=TRUE>>=
+<<plot.manhattan.LD.2, tidy=TRUE, eval=FALSE>>=
 summary(an, top=5) # List top 5 markers
 @
-We can see that {\tt  ΒΙCF2P453669} on chromosome 6 (23.34Mb) is the strongest association. Now time to visualize a short fragment of chromosome 6, 1Mb downstream and 1Mb upstream of the top-associated marker.
-<<plot.Manhattan.LD.3, tidy=TRUE, eval=TRUE>>=
-plot.manhattan.LD(data=cgmiscdat1,gwas.result=an,chr=6,region=c(22340000, 24340000),index.snp="BICF2P453669",p.value=0.05,bonferroni=F,mafThreshold=.1)
+{\small
+<<plot.Manhattan.LD.2b, tidy=TRUE, eval=TRUE, echo=FALSE>>=
+summary(an, top=5) # List top 5 markers
 @
+}
+We can see that {\tt BICF2P453669} on chromosome 6 (23.34Mb) is the strongest association. Now time to visualize a short fragment of chromosome 6, boyh 1.0Mb downstream and 1.0Mb upstream of the top-associated marker.
+<<plot.Manhattan.LD.3, tidy=FALSE, eval=TRUE, fig.cap="Here the black, empty circles denote monomorphic markers -- we did not perform any quality control before.">>=
+plot.manhattan.LD(data=cgmiscdat1, gwas.result=an, chr=6, 
+                  region=c(22340000, 24340000), 
+                  index.snp="BICF2P453669", 
+                  p.value=0.05, bonferroni=F, 
+                  mafThreshold=.1)
+@
+\section{Using {\tt clump.markers} function}
+The {\tt clump.markers} functions implements clumping algorithm as described in PLINK documentation \ref{plink}. In short, the clumping algorithm consists of the following steps:
+\begin{itemize}
+\item{First step}
+\end{itemize}
+
 \end{document}
