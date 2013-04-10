@@ -10,15 +10,18 @@ Package contains miscellaneous functions useful in computational genetics, espec
 \tabular{ll}{
 Package: \tab cgmisc\cr
 Type: \tab Package\cr
-Version: \tab 1.0\cr
-Date: \tab 2013-03-22\cr
+Version: \tab 2.0\cr
+Date: \tab 2013-04-09\cr
 License: \tab GPL (>=2.10)\cr
 }
 Currently the package contains the following functions: \cr
-- plot.manhattan.LD -- a function for plotting LD pattern on Manhattan plot.
+- plot.manhattan.LD -- a function for plotting LD pattern on Manhattan plot, \cr
+- compute.Fstats -- a function for computing Fst for two populations, \cr
+- clump.markers -- an R implementation of clumping algorithm known from PLINK, \cr
+- plot.clumps -- a function for plotting clumping results, \cr
 }
 \author{
-Marcin Kierczak
+Author(s): Marcin Kierczak
 
 Maintainer: Marcin Kierczak <marcin.kierczak@slu.se>
 }
