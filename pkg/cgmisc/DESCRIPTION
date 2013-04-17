@@ -6,8 +6,6 @@ Title: Various functions useful in computational genetics, e.g. GWAS.
 Author: Marcin Kierczak <marcin.kierczak@slu.se>
 Maintainer: Marcin Kierczak <marcin.kierczak@slu.se>
 Depends:
-    R (>= 2.15.3),
-    R (>= 3.0.0),
     GenABEL (>= 1.7.4)
 Description: Package contains various functions useful in computational
     genetics, e.g. in genome-wide association studies.
